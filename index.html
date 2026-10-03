@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para Amy ♡</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #08070b;
+    color: #f5f2f7;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+/* FONDO */
+
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -2;
+}
+
+.glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.16;
+}
+
+.glow.one {
+    background: #9b5cff;
+    top: -200px;
+    left: -150px;
+}
+
+.glow.two {
+    background: #ff4fa3;
+    right: -200px;
+    top: 35%;
+}
+
+.glow.three {
+    background: #6b4cff;
+    bottom: -250px;
+    left: 20%;
+}
+
+#particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    animation: fadeUp 1.4s ease forwards;
+}
+
+.small-title {
+    color: #b99aff;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(48px, 10vw, 95px);
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 30px;
+}
+
+.hero h1 span {
+    color: #c7a9ff;
+    font-style: italic;
+}
+
+.hero p {
+    max-width: 570px;
+    margin: auto;
+    color: #aaa5b0;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.start-btn {
+    margin-top: 40px;
+    border: 1px solid #8c6cff;
+    background: rgba(140,108,255,0.08);
+    color: white;
+    padding: 15px 28px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: 0.3s;
+}
+
+.start-btn:hover {
+    background: #8c6cff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 35px rgba(140,108,255,0.3);
+}
+
+/* SECCIONES */
+
+section {
+    min-height: 100vh;
+    padding: 110px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+}
+
+.section-label {
+    color: #a88aff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 11px;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 7vw, 65px);
+    font-weight: 500;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.section-text {
+    color: #aaa6af;
+    line-height: 1.9;
+    font-size: 16px;
+    max-width: 720px;
+}
+
+/* CARDS */
+
+.understood {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.card {
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 22px;
+    padding: 28px;
+    transition: 0.4s;
+    backdrop-filter: blur(10px);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(173,140,255,0.45);
+    background: rgba(150,110,255,0.06);
+}
+
+.card-number {
+    color: #8e6cff;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 13px;
+}
+
+.card p {
+    color: #97929d;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* NO VOY A DECIR */
+
+.not-say {
+    background: #0c0a10;
+}
+
+.strike-list {
+    margin-top: 50px;
+}
+
+.strike {
+    padding: 25px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.x {
+    width: 35px;
+    height: 35px;
+    min-width: 35px;
+    border: 1px solid rgba(255,90,130,0.4);
+    color: #ff7099;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.strike p {
+    color: #aaa6af;
+    font-size: 17px;
+}
+
+.strike p span {
+    text-decoration: line-through;
+    color: #77717b;
+}
+
+/* PROMESA */
+
+.promise-box {
+    margin-top: 50px;
+    padding: 45px;
+    border-radius: 28px;
+    background: linear-gradient(
+        135deg,
+        rgba(137,91,255,0.12),
+        rgba(255,79,163,0.05)
+    );
+    border: 1px solid rgba(172,140,255,0.2);
+}
+
+.promise-box p {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(23px, 4vw, 34px);
+    line-height: 1.5;
+}
+
+.promise-box em {
+    color: #c1a8ff;
+}
+
+/* CARTAS */
+
+.letters {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 50px;
+}
+
+.letter {
+    height: 260px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.letter-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+}
+
+.letter.open .letter-inner {
+    transform: rotateY(180deg);
+}
+
+.letter-front,
+.letter-back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,0.09);
+    padding: 30px;
+}
+
+.letter-front {
+    background: linear-gradient(145deg, #15111d, #0d0b11);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.letter-icon {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.letter-front h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.letter-front small {
+    color: #827d88;
+}
+
+.letter-back {
+    transform: rotateY(180deg);
+    background: #15111c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.letter-back p {
+    color: #c6bfca;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+/* FOTO */
+
+.photo-section {
+    text-align: center;
+}
+
+.photo-frame {
+    width: min(90vw, 420px);
+    height: 520px;
+    margin: 45px auto 30px;
+    border-radius: 28px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: #0c0a0f;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* FINAL */
+
+.final {
+    min-height: 100vh;
+    text-align: center;
+}
+
+.final .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.final h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 8vw, 75px);
+    font-weight: 500;
+    max-width: 800px;
+    line-height: 1.1;
+}
+
+.final h2 span {
+    color: #c2a6ff;
+    font-style: italic;
+}
+
+.final-message {
+    max-width: 650px;
+    color: #aaa5af;
+    line-height: 1.9;
+    margin: 35px auto;
+}
+
+.date {
+    color: #776f7e;
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-top: 30px;
+}
+
+.final-btn {
+    margin-top: 25px;
+    padding: 16px 30px;
+    border-radius: 50px;
+    background: white;
+    color: #0b0910;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.final-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(255,255,255,0.15);
+}
+
+/* MENSAJE OCULTO */
+
+.hidden-message {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease, opacity 0.8s ease;
+    opacity: 0;
+}
+
+.hidden-message.show {
+    max-height: 400px;
+    opacity: 1;
+}
+
+.hidden-message p {
+    margin-top: 30px;
+    color: #c6bdcf;
+    line-height: 1.9;
+}
+
+/* ANIMACIONES */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: 1s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.heart {
+    position: fixed;
+    pointer-events: none;
+    animation: floatHeart 3s ease forwards;
+    z-index: 20;
+    color: #bd9bff;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(0.5);
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-180px) scale(1.2);
+    }
+
+}
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* CELULAR */
+
+@media (max-width: 750px) {
+
+    section {
+        padding: 90px 20px;
+    }
+
+    .understood,
+    .letters {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 24px;
+    }
+
+    .promise-box {
+        padding: 30px 24px;
+    }
+
+    .photo-frame {
+        width: min(90vw, 390px);
+        height: 500px;
+    }
+
+    .strike {
+        align-items: flex-start;
+    }
+
+    .strike p {
+        font-size: 15px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="background">
+
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+    <div class="glow three"></div>
+
+</div>
+
+<canvas id="particles"></canvas>
+
+
+<!-- INICIO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            Para Amy · 13.01.2026
+        </div>
+
+        <h1>
+            Esta vez<br>
+            quiero <span>escucharte.</span>
+        </h1>
+
+        <p>
+            No hice esto para convencerte de que todo está bien.
+            Tampoco para pedirte que dejes de sentir lo que sientes.
+            Solo quería encontrar una forma diferente de decirte algo.
+        </p>
+
+        <button
+            class="start-btn"
+            onclick="goTo('entendi')"
+        >
+            Quiero explicarte algo ↓
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- LO QUE ENTENDÍ -->
+
+<section id="entendi">
+
+    <div class="container reveal">
+
+        <div class="section-label">
+            01 · Lo que entendí
+        </div>
+
+        <h2 class="section-title">
+            No quiero defenderme.<br>
+            Quiero entenderte.
+        </h2>
+
+        <p class="section-text">
+
+            Después de lo que pasó, me quedé pensando en lo que me dijiste.
+            Y creo que una de las cosas más importantes era que no querías
+            que intentara hacer desaparecer tus sentimientos simplemente
+            porque yo veía las cosas de otra manera.
+
+            <br><br>
+
+            Puede que yo no haya tenido la intención de hacerte sentir así,
+            pero eso no significa que lo que sentiste deje de ser válido.
+            Y eso es algo que quiero aprender a entender mejor.
+
+        </p>
+
+
+        <div class="understood">
+
+            <div class="card">
+
+                <div class="card-number">
+                    01
+                </div>
+
+                <h3>
+                    Tus sentimientos importan
+                </h3>
+
+                <p>
+                    Aunque yo vea una situación diferente,
+                    eso no significa que tu manera de sentirla esté mal.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-number">
+                    02
+                </div>
+
+                <h3>
+                    Escucharte no es ganar
+                </h3>
+
+                <p>
+                    No necesito encontrar una explicación para cada cosa.
+                    A veces simplemente necesito escucharte.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-number">
+                    03
+                </div>
+
+                <h3>
+                    Las palabras no bastan
+                </h3>
+
+                <p>
+                    Entiendo por qué repetir "voy a cambiar"
+                    puede perder significado si después no lo acompaño con hechos.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LO QUE NO VOY A DECIR -->
+
+<section class="not-say">
+
+    <div class="container reveal">
+
+        <div class="section-label">
+            02 · Esta vez
+        </div>
+
+        <h2 class="section-title">
+            Hay cosas que<br>
+            no quiero decirte.
+        </h2>
+
+        <p class="section-text">
+            Porque no quiero convertir una disculpa en una discusión
+            sobre quién tiene razón.
+        </p>
+
+
+        <div class="strike-list">
+
+            <div class="strike">
+
+                <div class="x">
+                    ×
+                </div>
+
+                <p>
+                    <span>
+                        "Pero yo no quise hacerlo así."
+                    </span>
+                </p>
+
+            </div>
+
+
+            <div class="strike">
+
+                <div class="x">
+                    ×
+                </div>
+
+                <p>
+                    <span>
+                        "Estás exagerando."
+                    </span>
+                </p>
+
+            </div>
+
+
+            <div class="strike">
+
+                <div class="x">
+                    ×
+                </div>
+
+                <p>
+                    <span>
+                        "Ya te dije que voy a cambiar."
+                    </span>
+                </p>
+
+            </div>
+
+
+            <div class="strike">
+
+                <div class="x">
+                    ×
+                </div>
+
+                <p>
+                    <span>
+                        "Ya pasó, ¿por qué sigues así?"
+                    </span>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CAMBIO -->
+
+<section>
+
+    <div class="container reveal">
+
+        <div class="section-label">
+            03 · Sin promesas enormes
+        </div>
+
+        <h2 class="section-title">
+            No quiero pedirte<br>
+            que me creas.
+        </h2>
+
+
+        <div class="promise-box">
+
+            <p>
+
+                No quiero decirte otra vez
+                <em>"voy a cambiar"</em>
+                esperando que solamente por escucharlo
+                vuelvas a confiar.
+
+                <br><br>
+
+                Prefiero que algún día puedas mirar mis acciones
+                y pensar por ti misma:
+
+                <em>
+                    "sí, realmente está intentando hacerlo diferente."
+                </em>
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CARTAS -->
+
+<section>
+
+    <div class="container reveal">
+
+        <div class="section-label">
+            04 · Tres cosas
+        </div>
+
+        <h2 class="section-title">
+            Abre las que quieras.
+        </h2>
+
+        <p class="section-text">
+
+            No tienes que abrirlas todas.
+            Pero hice cada una pensando en algo diferente.
+
+        </p>
+
+
+        <div class="letters">
+
+
+            <div
+                class="letter"
+                onclick="openLetter(this)"
+            >
+
+                <div class="letter-inner">
+
+                    <div class="letter-front">
+
+                        <div class="letter-icon">
+                            ♡
+                        </div>
+
+                        <h3>
+                            Lo que siento
+                        </h3>
+
+                        <small>
+                            Toca para abrir
+                        </small>
+
+                    </div>
+
+
+                    <div class="letter-back">
+
+                        <p>
+
+                            Te quiero muchísimo, Amy.
+                            Incluso en los días donde no sabemos
+                            cómo hablarnos bien.
+
+                            No quiero que una pelea borre todo
+                            lo bonito que hemos construido.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="letter"
+                onclick="openLetter(this)"
+            >
+
+                <div class="letter-inner">
+
+                    <div class="letter-front">
+
+                        <div class="letter-icon">
+                            🌱
+                        </div>
+
+                        <h3>
+                            Lo que quiero mejorar
+                        </h3>
+
+                        <small>
+                            Toca para abrir
+                        </small>
+
+                    </div>
+
+
+                    <div class="letter-back">
+
+                        <p>
+
+                            Quiero aprender a reaccionar mejor,
+                            escuchar antes de defenderme
+                            y entender que pedirte paciencia
+                            no significa dejar de trabajar
+                            en mis propias actitudes.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="letter"
+                onclick="openLetter(this)"
+            >
+
+                <div class="letter-inner">
+
+                    <div class="letter-front">
+
+                        <div class="letter-icon">
+                            ∞
+                        </div>
+
+                        <h3>
+                            Lo que quiero contigo
+                        </h3>
+
+                        <small>
+                            Toca para abrir
+                        </small>
+
+                    </div>
+
+
+                    <div class="letter-back">
+
+                        <p>
+
+                            Quiero seguir viviendo cosas contigo,
+                            seguir conociéndote,
+                            seguir aprendiendo de nosotros
+                            y que nuestras mejores etapas
+                            todavía estén por llegar.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOTO -->
+
+<section class="photo-section">
+
+    <div class="container reveal">
+
+        <div class="section-label">
+            05 · Nosotros
+        </div>
+
+        <h2 class="section-title">
+            Porque una pelea<br>
+            no es toda nuestra historia.
+        </h2>
+
+
+        <div class="photo-frame">
+
+            <img
+                src="amy.jpg"
+                alt="Amy y yo"
+            >
+
+        </div>
+
+
+        <p
+            class="section-text"
+            style="margin:auto;"
+        >
+
+            No quiero que esta página sea una solución mágica.
+            Solo quería dejarte algo que puedas leer
+            sin que tengas que responderme inmediatamente.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section class="final">
+
+    <div class="container reveal">
+
+        <div class="section-label">
+            06 · Y finalmente
+        </div>
+
+        <h2>
+
+            No tienes que estar bien
+            <span>ahora.</span>
+
+        </h2>
+
+
+        <p class="final-message">
+
+            No tienes que perdonarme inmediatamente.
+            No tienes que actuar como si nada hubiera pasado.
+            Tampoco quiero presionarte para que me digas
+            que todo está bien.
+
+            <br><br>
+
+            Solo quería que supieras que te escuché.
+            Que entendí un poco más lo que intentabas decirme.
+            Y que siento haberte hecho sentir que tus sentimientos
+            tenían que ser defendidos frente a mí.
+
+            <br><br>
+
+            Te quiero, Amy.
+            Y si quiero que esto dure, también tengo que aprender
+            a cuidar mejor la forma en la que te trato.
+
+            <br><br>
+
+            Esta vez no quiero que mis palabras sean la prueba.
+
+            <br>
+
+            <strong>
+                Quiero que lo sean mis acciones.
+            </strong>
+
+        </p>
+
+
+        <button
+            class="final-btn"
+            onclick="finalMessage()"
+        >
+            Hay algo más...
+        </button>
+
+
+        <div
+            class="hidden-message"
+            id="hiddenMessage"
+        >
+
+            <p>
+
+                Si llegaste hasta aquí, solamente quería decirte
+                una última cosa:
+
+                <br><br>
+
+                Gracias por seguir aquí incluso cuando no siempre
+                sabemos hacer las cosas perfectamente.
+
+                <br><br>
+
+                No quiero una relación donde nunca peleemos.
+                Quiero una donde aprendamos a volver a encontrarnos
+                después de hacerlo.
+
+                <br><br>
+
+                Y yo quiero seguir encontrándote a ti.
+
+                <br><br>
+
+                🤍
+
+            </p>
+
+        </div>
+
+
+        <div class="date">
+            PABLO · AMY · 13 · 01 · 2026
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* IR A SECCIÓN */
+
+function goTo(id) {
+
+    document
+        .getElementById(id)
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+/* CARTAS */
+
+function openLetter(letter) {
+
+    letter.classList.toggle("open");
+
+    createHeart(
+        window.innerWidth / 2,
+        window.innerHeight / 2
+    );
+
+}
+
+
+/* MENSAJE FINAL */
+
+function finalMessage() {
+
+    const message =
+        document.getElementById("hiddenMessage");
+
+    message.classList.toggle("show");
+
+
+    if (message.classList.contains("show")) {
+
+        for (let i = 0; i < 12; i++) {
+
+            setTimeout(() => {
+
+                createHeart(
+                    Math.random() *
+                    window.innerWidth,
+
+                    window.innerHeight * 0.7
+                );
+
+            }, i * 120);
+
+        }
+
+    }
+
+}
+
+
+/* CORAZONES */
+
+function createHeart(x, y) {
+
+    const heart =
+        document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.innerHTML = "♡";
+
+    heart.style.left =
+        x + "px";
+
+    heart.style.top =
+        y + "px";
+
+    heart.style.fontSize =
+        (14 + Math.random() * 20) + "px";
+
+    document.body.appendChild(heart);
+
+
+    setTimeout(() => {
+
+        heart.remove();
+
+    }, 3000);
+
+}
+
+
+/* ANIMACIONES AL HACER SCROLL */
+
+const observer =
+    new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target
+                        .classList
+                        .add("visible");
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.15
+        }
+
+    );
+
+
+document
+    .querySelectorAll(".reveal")
+    .forEach(el => {
+
+        observer.observe(el);
+
+    });
+
+
+/* PARTÍCULAS */
+
+const canvas =
+    document.getElementById("particles");
+
+const ctx =
+    canvas.getContext("2d");
+
+let particles = [];
+
+
+function resizeCanvas() {
+
+    canvas.width =
+        window.innerWidth;
+
+    canvas.height =
+        window.innerHeight;
+
+}
+
+
+resizeCanvas();
+
+
+window.addEventListener(
+    "resize",
+    resizeCanvas
+);
+
+
+function createParticles() {
+
+    particles = [];
+
+    const amount =
+        window.innerWidth < 600
+        ? 35
+        : 70;
+
+
+    for (let i = 0; i < amount; i++) {
+
+        particles.push({
+
+            x:
+                Math.random()
+                * canvas.width,
+
+            y:
+                Math.random()
+                * canvas.height,
+
+            size:
+                Math.random()
+                * 1.5
+                + 0.5,
+
+            speed:
+                Math.random()
+                * 0.25
+                + 0.05,
+
+            opacity:
+                Math.random()
+                * 0.5
+                + 0.1
+
+        });
+
+    }
+
+}
+
+
+createParticles();
+
+
+function animateParticles() {
+
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+
+    particles.forEach(p => {
+
+        p.y -= p.speed;
+
+
+        if (p.y < -10) {
+
+            p.y =
+                canvas.height + 10;
+
+            p.x =
+                Math.random()
+                * canvas.width;
+
+        }
+
+
+        ctx.beginPath();
+
+
+        ctx.arc(
+            p.x,
+            p.y,
+            p.size,
+            0,
+            Math.PI * 2
+        );
+
+
+        ctx.fillStyle =
+            `rgba(190,160,255,${p.opacity})`;
+
+
+        ctx.fill();
+
+    });
+
+
+    requestAnimationFrame(
+        animateParticles
+    );
+
+}
+
+
+animateParticles();
+
+
+/* CORAZÓN AL TOCAR */
+
+document.addEventListener(
+    "click",
+    function(e) {
+
+        if (
+            e.target.tagName !== "BUTTON" &&
+            !e.target.closest(".letter")
+        ) {
+
+            createHeart(
+                e.clientX,
+                e.clientY
+            );
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
